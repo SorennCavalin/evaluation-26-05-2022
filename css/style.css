@@ -1,0 +1,282 @@
+/*    propriétées générales    */
+@font-face{
+    font-family: sports;
+    src: url("../fonts/wf3-eval-intermediaire-html-css-sport.pdf");
+}
+*{
+    box-sizing: border-box;
+    font-family: sports;
+}
+body{
+    margin: 0;
+}
+header{
+    
+    background:url(../img/background.jpg);
+    background-color: #f3f3f3;
+    padding-top: 20px;
+}
+.container{
+    width: 1400px;
+    margin: auto;
+}
+
+/*    header    */
+
+header .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* ligne 6 expérimental */
+    /* code pris sur internet et retappé pour les besoin du site je ne maitrise pas encore  */
+    border-width: 5px;
+    border-style: solid;
+    border-right: none;
+    border-bottom: none;
+    border-image: linear-gradient( to top, #ea9f05, transparent ) 1 100%;
+}
+.logo {
+    width: 30%;
+    font-size: 1.3vw;
+    padding-left: 50px;
+}
+.logo p{
+    margin: 0;
+    text-indent: 5px;
+}
+span{
+    color: #ea9f05;
+}
+.account{
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+}
+.my-account{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 3px solid black;
+    padding: 7px 35px ;
+}
+.my-account div{
+    display: flex;
+}
+.account-name{
+    text-align: end;
+    font-size: 1vw;
+    margin: 5px 0 15px 0;
+}
+a{
+    text-decoration: none;
+}
+.account-option a{
+    display: inline-block;
+    color: black;
+    border-left: 1px gray solid ;
+    padding: 20px 30px 10px 30px;
+}
+.account-option a:last-of-type{
+    border-right: 1px solid gray;
+}
+.my-account a{
+    color: black;
+}
+.my-account a:first-of-type{
+    padding-left: 5px;
+}
+/* de ligne 83 a 94 */
+/* permet au lien de s'étendre sur les icone de bonhomme et de panier */
+.my-account div{
+    position: relative;
+}
+.my-account a::after{
+    
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+/*    main    */
+
+main{
+    position: relative;
+   background-color: #1c1c1c;
+   padding-top: 30px;
+}
+main .container{
+    background-color: #eeee;
+    padding-bottom: 150px;
+}
+.banner {
+    width: 100%;
+}
+.block-vente{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+.block-vente:last-of-type{
+    margin-top: 80px;  /* Pour l'écart entre le main et le footer et l'espace dont la nav a besoin */
+}
+.item{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 35%;
+}
+.item img{
+    width: 100%;
+}
+.promo {
+    position: absolute;
+    top: 3px;
+    right: -20px;
+    background-color: rgb(35, 32, 32);
+    box-shadow: 0px 0px 0px rgb(70 70 70) inset, -2px 0px 2px rgb(70 70 70) inset; /* pour un effet renfoncé */
+    color: #ea9f05;
+    font-size: 1.5vw;
+    width: 100px;
+    text-align: center;
+    line-height: 50px;
+    height: 60px;
+    border: rgba(28, 28, 28, 0.5) 5px solid; /* l'effet rgb pour l'opacité n'a pas l'air de fonctionner ,pas sûr */
+    border-radius: 5px;
+}
+.item-sale{
+    width: 100%;
+    box-shadow: 3px 3px 7px gray , -3px -3px 7px gray;
+    background-color: #fff;
+    text-align: center;
+}
+.item-sale p {
+/* pour coller le texte sous l'image, ayant trop de vide en bas */
+    position: absolute;
+    margin: 0px;
+    bottom: 100px;
+    font-size: 1.1vw;
+    left: 130px;
+}
+.details{
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    align-items: flex-end;
+}
+.details button{
+    color: white;
+    background-color: black;
+    height: 40px;
+    font-size: 1.1vw;
+    width: 45%;
+    cursor: pointer;
+}
+.price{
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 50%;
+    font-weight: 600;
+    
+    border-width: 3px;
+    border-style: solid;
+    border-top: none;
+    border-image: linear-gradient( to left, black, transparent ) 100% 1%;
+}
+
+.price span{
+    font-size: 2.5vw;
+}
+.price s{
+    vertical-align: middle;
+    font-size: 1.5vw;
+}
+
+/*     bas de page     */
+
+footer , nav{
+    background: rgb(57, 56, 56);
+}
+
+/*     nav en position absolue     */
+
+nav{
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    width: 100%;
+    height: 30px;
+}
+nav ul{
+    display: flex;
+    width: 50px;
+    background-color: #eeee;
+    margin: auto;
+    width:475px;
+    height: 60px;
+    margin-top: 30px;
+    border: 1px solid gray;
+    border-radius: 0 0 10px 10px;
+    justify-content: space-between;
+    padding-right: 40px;
+}
+nav li{
+    list-style-type: square;
+    padding-left: 10px;
+
+    padding-top: 20px;
+}
+nav li:first-of-type{
+    list-style-type: none;
+    padding-left: 0;
+}
+nav a{
+color: black;
+}
+
+
+/*     footer     */
+
+
+footer{
+    color: #373737;
+    padding-top: 100px;
+}
+.information{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+.information div{
+    width: 20%;
+}
+.social-links{
+    display: flex;
+    justify-content: center;
+}
+.social-links a{
+    margin: 50px;
+}
+footer p{
+    text-align: center;
+    margin-bottom: 0;
+    padding-bottom: 10px;
+    opacity: 0.8;   /*    pour donner un effet grisé    */
+    color: white;
+}
+
+/*    hover    */
+button:hover{
+    color: #ea9f05;
+    text-shadow: 1px 1px 1px black;
+}
+a:hover{
+    color: #ea9f05;
+    text-shadow: 1px 1px 1px black;
+}
